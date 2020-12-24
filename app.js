@@ -9,5 +9,5 @@ let authenticate = require('./auth').authenticate
 authenticationRoutes(app)
 
 app.get('/authenticated-page', authenticate, (request, response) => {
-    return response.sendFile(process.cwd() + '/authenticated-page.html')
+    return response.sendFile(process.cwd() + '/pages/authenticated-page.html')
 })
