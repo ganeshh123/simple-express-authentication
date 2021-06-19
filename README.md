@@ -1,5 +1,5 @@
-# simple-express-authentication
-Dead simple manual authentication for Express Apps - No Passport!
+# Simple Express Authentication
+Dead simple manual authentication for Express Apps - No Passport Required!
 
 ## Requirements
 
@@ -18,7 +18,7 @@ Dead simple manual authentication for Express Apps - No Passport!
 
 ## Setup
 
-1. Import `auth.js` and optionally `login.html` and `register.html` to your project
+1. Clone/Download the repository and import `auth.js` and optionally `login.html` and `register.html` to your project
 2. Import the `authenticate` function and the `authenticationRoutes` function, and run `authenticationroutes` and give it your express app:
 
     ```bash

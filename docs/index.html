@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="icon.png" />
+    <title>Simple Express Authentication</title>
+    <meta name="description" content="Dead simple manual authentication for Express Apps" />
+    <style>
+        @font-face {
+            font-family: "iA Writer Quattro S";
+            src: url("https://cors.bridged.cc/https://ganeshh123.github.io/assets/iAWriterQuattroS-Regular.woff") format("woff")
+        }
+
+        * :not(code) {
+            font-family: "iA Writer Quattro S", sans-serif;
+            color: rgba(255, 255, 255, 0.9);
+            box-sizing: border-box;
+        }
+
+        html {
+            max-height: 100vh;
+            max-width: 100vw;
+        }
+
+        body {
+            background-color: rgb(47, 52, 55);
+            max-width: 100vw;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding-left: 10px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        caption,
+        ul,
+        figure {
+            max-width: 100%;
+        }
+
+        img {
+            max-width: 600px;
+            height: auto;
+        }
+
+        p {
+            margin-left: 10px;
+        }
+
+        pre,
+        code {
+            margin-left: 10px;
+            background-color: #3f4447;
+            overflow-x: auto;
+            max-width: 90%;
+        }
+
+        .contents {
+            list-style-type: none;
+        }
+
+        iframe {
+            width: 640px;
+            height: 360px;
+        }
+
+        #footer {
+            margin-top: 15px;
+            text-align: center;
+            width: 100vw;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+
+        @media only screen and (max-width: 425px) {
+            iframe {
+                width: 384px;
+                height: 216px;
+            }
+
+            img {
+                max-width: 300px;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="simple-express-authentication">Simple Express Authentication</h1>
+    <p>Dead simple manual authentication for Express Apps - No Passport Required!</p>
+    <ul class="contents">
+        <li><a href="#requirements">Requirements</a></li>
+        <ul class="contents">
+            <li><a href="#dependencies">Dependencies</a></li>
+            <li><a href="#database-requirements">Database Requirements</a></li>
+        </ul>
+
+        <li><a href="#setup">Setup</a></li>
+        <li><a href="#features">Features</a></li>
+        <ul class="contents">
+            <li><a href="#included">Included</a></li>
+            <li><a href="#not-yet-implemented">Not Yet Implemented</a></li>
+        </ul>
+    </ul>
+    <h2 id="requirements">Requirements</h2>
+    <h3 id="dependencies">Dependencies</h3>
+    <ul>
+        <li>Express</li>
+        <li>Bcrypt</li>
+        <li>Body-Parser</li>
+        <li>Cookie-Parser</li>
+    </ul>
+    <h3 id="database-requirements">Database Requirements</h3>
+    <ul>
+        <li>User Documents must have an array to store tokens (strings)</li>
+        <li>User Documents must have a unique ID</li>
+        <li>User Documents must have a unique field (currently username, maybe swap for email)</li>
+    </ul>
+    <h2 id="setup">Setup</h2>
+    <a href="https://github.com/ganeshh123/simple-express-authentication">Source Repo</a>
+    <ol>
+        <li>
+            <p>Clone/Download <a href="https://github.com/ganeshh123/simple-express-authentication">the repository</a> and import <code>auth.js</code> and optionally <code>login.html</code> and
+                <code>register.html</code> to your project</p>
+        </li>
+        <li>
+            <p>Import the <code>authenticate</code> function and the <code>authenticationRoutes</code> function, and run
+                <code>authenticationroutes</code> and give it your express app:</p>
+            <pre><code class="language-bash">let authenticationRoutes = require("./auth").authenticationRoutes
+ let authenticate = require("./auth").authenticate
+    
+ authenticationRoutes(app)
+    </code></pre>
+        </li>
+        <li>
+            <p>Tweak <code>auth.js</code> as desired, and add in the Database Logic</p>
+        </li>
+    </ol>
+    <h2 id="features">Features</h2>
+    <h3 id="included">Included</h3>
+    <ul>
+        <li>Password Hashing with Bcrypt</li>
+    </ul>
+    <h3 id="not-yet-implemented">Not Yet Implemented</h3>
+    <ul>
+        <li>Messages to display error messages to users</li>
+        <li>Editing Registration Data from Client Side</li>
+    </ul>
+    <a id="footer" href="https://nesh.gq/">Ganesh H</a>
+</body>
+
+</html>
